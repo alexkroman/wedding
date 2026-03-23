@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keelin & Alex Wedding Campout 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500;600&family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <style>
+    /* ========== CSS Variables ========== */
+    :root {
+      --pink: #e16162;
+      --yellow: #f9bc60;
+      --teal: #004643;
+      --orange: #e16162;
+      --red: #c14142;
+      --cream: #fffffe;
+      --charcoal: #001e1d;
+      --green: #004643;
+      --ink: #001e1d;
+      --paper: #fffffe;
+      --sage: #abd1c6;
+      --mauve: #e8e4e6;
+      --pink-light: #f5e0e2;
+      --teal-light: #abd1c6;
+      --orange-light: #fce8d5;
+      --green-light: #c5e0d8;
+      --yellow-light: #fdf0d5;
+
+      --font-display: 'Lora', serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'Space Mono', monospace;
+
+      --max-width: 900px;
+      --section-padding: 5rem 1.5rem;
+      --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    }
+
+    /* ========== Reset & Base ========== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--charcoal);
+      background: var(--paper);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Grain overlay on every section */
+    section::after, .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: var(--grain);
+      background-repeat: repeat;
+      pointer-events: none;
+      z-index: 1;
+      mix-blend-mode: multiply;
+    }
+
+    section, .hero { position: relative; }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--teal); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; font-weight: 600; }
+    .hero a, .rsvp-section a, footer a { color: var(--yellow); }
+    .hero-cta, .rsvp-btn { color: var(--ink) !important; border-color: var(--ink) !important; }
+    a:hover { text-decoration: none; border-bottom-color: currentColor; }
+
+    /* ========== Navigation ========== */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--teal);
+      padding: 0 1.5rem;
+      border-bottom: 3px solid var(--yellow);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-mono);
+      color: var(--yellow);
+      font-size: 0.9rem;
+      font-weight: 700;
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.7);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      transition: color 0.2s;
+      border-bottom: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--yellow);
+      border-bottom: none;
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--cream);
+      margin: 5px 0;
+      transition: all 0.3s;
+    }
+
+    /* ========== Hero ========== */
+    .hero {
+      background: var(--ink);
+      color: var(--cream);
+      text-align: center;
+      padding: 6rem 1.5rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(225,97,98,0.12) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(249,188,96,0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-content { position: relative; z-index: 2; }
+
+    .hero-photo {
+      width: 220px;
+      height: 220px;
+      border-radius: 4px;
+      object-fit: cover;
+      border: 3px solid var(--yellow);
+      margin: 0 auto 2.5rem;
+      transform: rotate(-2deg);
+      box-shadow: 8px 8px 0 rgba(0,0,0,0.2);
+    }
+
+    .hero-names {
+      font-family: var(--font-display);
+      font-size: 4.5rem;
+      font-style: italic;
+      line-height: 1.1;
+      margin-bottom: 0.3rem;
+      color: var(--cream);
+      font-weight: 400;
+    }
+
+    .hero-ampersand {
+      color: var(--yellow);
+      font-size: 3rem;
+      display: block;
+      margin: -0.2rem 0;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--yellow);
+      margin-bottom: 2rem;
+      margin-top: 0.5rem;
+    }
+
+    .hero-details {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      line-height: 2;
+      opacity: 0.8;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-details strong { color: var(--yellow); font-weight: 700; }
+
+    .hero-cta {
+      display: inline-block;
+      margin-top: 2.5rem;
+      padding: 0.9rem 2.5rem;
+      background: var(--yellow);
+      color: var(--ink);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      border: 3px solid var(--ink);
+      border-radius: 0;
+      box-shadow: 4px 4px 0 var(--pink);
+      transition: all 0.2s;
+    }
+
+    .hero-cta:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 var(--pink);
+    }
+
+    /* ========== Section Styles ========== */
+    section { padding: var(--section-padding); }
+
+    .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 400;
+      font-style: italic;
+      text-align: left;
+      margin-bottom: 2.5rem;
+      position: relative;
+      padding-bottom: 0.75rem;
+      padding-left: 0;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 5px;
+    }
+
+    /* Section color themes — saturated, not pastel */
+    .bg-cream { background: var(--paper); }
+    .bg-teal { background: var(--teal-light); }
+    .bg-orange { background: var(--orange-light); }
+    .bg-green { background: var(--green-light); }
+    .bg-pink { background: var(--pink-light); }
+    .bg-yellow { background: var(--yellow-light); }
+
+    /* Bold colored dividers — alternating forest & cumbia tones */
+    section + section { border-top: 5px solid var(--teal); }
+    #about { border-top-color: var(--yellow); }
+    #stay { border-top-color: var(--green); }
+    #music { border-top-color: var(--pink); }
+    #food { border-top-color: var(--orange); }
+    #camping { border-top-color: var(--teal); }
+    #registry { border-top-color: var(--yellow); }
+    #rsvp { border-top: none; }
+
+    .section-title.pink::after { background: var(--pink); }
+    .section-title.teal::after { background: var(--teal); }
+    .section-title.orange::after { background: var(--orange); }
+    .section-title.green::after { background: var(--green); }
+    .section-title.yellow::after { background: var(--yellow); }
+
+    /* ========== Schedule ========== */
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    .schedule-table th {
+      background: var(--ink);
+      color: var(--sage);
+      padding: 0.75rem 0.5rem;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+    }
+
+    .schedule-table td {
+      padding: 0.6rem 0.5rem;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .schedule-table td:first-child {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-align: right;
+      white-space: nowrap;
+      color: var(--charcoal);
+      background: rgba(0,0,0,0.02);
+    }
+
+    .schedule-event {
+      display: inline-block;
+      padding: 0.35rem 0.8rem;
+      border-radius: 2px;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    .event-chapa { background: var(--orange); color: white; }
+    .event-ceremony { background: var(--pink); color: white; }
+    .event-dinner { background: var(--red); color: white; }
+    .event-band { background: var(--teal); color: white; }
+    .event-dj { background: var(--yellow); color: var(--charcoal); }
+    .event-chill { background: var(--green); color: white; }
+    .event-setup { background: var(--teal); color: white; }
+    .event-brunch { background: var(--orange); color: white; }
+    .event-arrive { background: var(--charcoal); color: var(--cream); }
+    .event-packout { background: var(--green); color: white; }
+    .event-byo { background: var(--yellow); color: var(--charcoal); }
+
+    /* ========== Info Cards ========== */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .info-card {
+      background: white;
+      border-radius: 0;
+      padding: 1.5rem;
+      box-shadow: 5px 5px 0 var(--pink);
+      border: 2px solid var(--charcoal);
+      border-top: 5px solid var(--pink);
+    }
+
+    .info-card h3 {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.75rem;
+    }
+
+    .info-card p, .info-card li {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .info-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .info-card ul li::before {
+      content: "\2022";
+      color: var(--pink);
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: 0;
+    }
+
+    .info-card.teal-border { border-top-color: var(--teal); box-shadow: 5px 5px 0 var(--teal); }
+    .info-card.orange-border { border-top-color: var(--orange); box-shadow: 5px 5px 0 var(--orange); }
+    .info-card.green-border { border-top-color: var(--green); box-shadow: 5px 5px 0 var(--green); }
+    .info-card.yellow-border { border-top-color: var(--yellow); box-shadow: 5px 5px 0 var(--yellow); }
+    .info-card.red-border { border-top-color: var(--red); box-shadow: 5px 5px 0 var(--red); }
+
+    /* ========== Food Section ========== */
+    .food-event {
+      background: white;
+      border-radius: 0;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 5px 5px 0 var(--orange);
+      border: 2px solid var(--charcoal);
+      border-left: 6px solid var(--orange);
+    }
+
+    .food-event h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-style: italic;
+      margin-bottom: 0.3rem;
+    }
+
+    .food-event .food-subtitle {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--teal);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    .food-event p {
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .menu-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+
+    .menu-list li {
+      padding: 0.4rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      font-size: 0.95rem;
+    }
+
+    .menu-list li::before {
+      content: "\1F525";
+      position: absolute;
+      left: 0;
+    }
+
+    .food-event.dinner-border { border-left-color: var(--red); box-shadow: 5px 5px 0 var(--red); }
+    .food-event.breakfast-border { border-left-color: var(--yellow); box-shadow: 5px 5px 0 var(--yellow); }
+    .food-event.sunday-border { border-left-color: var(--green); box-shadow: 5px 5px 0 var(--green); }
+
+    .food-note {
+      background: var(--yellow-light);
+      border-radius: 0;
+      padding: 1rem 1.5rem;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      border-left: 4px solid var(--yellow);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+    }
+
+    /* ========== Music Section ========== */
+    .band-feature {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      background: white;
+      border-radius: 0;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 6px 6px 0 var(--teal);
+      border: 2px solid var(--charcoal);
+      border-top: 5px solid var(--teal);
+    }
+
+    .band-feature img {
+      width: 200px;
+      border-radius: 0;
+      flex-shrink: 0;
+      transform: rotate(1deg);
+      box-shadow: 4px 4px 0 var(--pink);
+    }
+
+    .band-info h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+
+    .band-info p { font-size: 0.95rem; }
+
+    .dj-list {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .dj-tag {
+      background: var(--yellow);
+      color: var(--charcoal);
+      padding: 0.5rem 1.2rem;
+      border-radius: 0;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border: 2px solid var(--charcoal);
+      box-shadow: 3px 3px 0 var(--charcoal);
+    }
+
+    /* ========== Venue Map ========== */
+    .venue-map-container {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .venue-map-container img {
+      max-width: 100%;
+      border-radius: 0;
+      box-shadow: 6px 6px 0 var(--teal);
+      border: 2px solid var(--charcoal);
+      margin: 0 auto;
+    }
+
+    .entrance-photo {
+      max-width: 600px;
+      margin: 1.5rem auto 0;
+      border-radius: 0;
+      box-shadow: 6px 6px 0 var(--orange);
+      border: 2px solid var(--charcoal);
+      transform: rotate(0.5deg);
+    }
+
+    /* ========== Camping ========== */
+    .camping-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .camping-card {
+      background: white;
+      border-radius: 0;
+      padding: 1.5rem;
+      box-shadow: 4px 4px 0 var(--green);
+      border: 2px solid var(--charcoal);
+    }
+
+    .camping-card h3 {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .camping-card p,
+    .camping-card li {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .camping-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .camping-card ul li {
+      padding: 0.3rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .camping-card ul li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: bold;
+    }
+
+    /* ========== Alert Box ========== */
+    .alert-box {
+      background: #FFEBEE;
+      border: 3px solid var(--red);
+      border-radius: 0;
+      padding: 1.5rem 2rem;
+      margin: 2rem 0;
+      text-align: center;
+      box-shadow: 4px 4px 0 var(--red);
+    }
+
+    .alert-box h3 {
+      color: var(--red);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+
+    .alert-box p { font-size: 0.95rem; }
+
+    /* ========== Registry ========== */
+    .registry-intro {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 2rem;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .venmo-tag {
+      display: inline-block;
+      background: var(--teal);
+      color: var(--sage);
+      padding: 0.6rem 1.5rem;
+      border-radius: 0;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      margin: 1rem 0 2rem;
+      border: 2px solid var(--ink);
+    }
+
+    .gift-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gift-card {
+      background: white;
+      border-radius: 0;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 4px 4px 0 var(--pink);
+      border: 2px solid var(--charcoal);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .gift-card:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 var(--pink);
+    }
+
+    .gift-amount {
+      font-family: var(--font-mono);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--pink);
+      margin-bottom: 0.5rem;
+    }
+
+    .gift-card h4 {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .gift-card p {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    /* ========== RSVP ========== */
+    .rsvp-section {
+      background: var(--teal);
+      color: var(--cream);
+      text-align: center;
+      padding: 4rem 1.5rem;
+    }
+
+    .rsvp-section .section-title {
+      color: var(--cream);
+      text-align: center;
+    }
+
+    .rsvp-section .section-title::after {
+      background: var(--yellow);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .rsvp-btn {
+      display: inline-block;
+      padding: 1rem 3rem;
+      background: var(--yellow);
+      color: var(--ink);
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      border: 3px solid var(--ink);
+      border-radius: 0;
+      box-shadow: 5px 5px 0 var(--pink);
+      transition: all 0.2s;
+    }
+
+    .rsvp-btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 7px 7px 0 var(--pink);
+      border-bottom: 3px solid var(--ink);
+    }
+
+    /* ========== Footer ========== */
+    footer {
+      background: var(--ink);
+      color: var(--cream);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    footer .footer-names {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.5rem;
+      color: var(--yellow);
+      margin-bottom: 0.5rem;
+    }
+
+    footer p {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ========== Responsive ========== */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 56px;
+        left: 0;
+        right: 0;
+        background: var(--teal);
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1rem;
+        border-bottom: 3px solid var(--yellow);
+      }
+
+      .nav-links.open { display: flex; }
+      .nav-links a { font-size: 0.8rem; }
+
+      .hamburger { display: block; }
+
+      .hero { padding: 4rem 1.5rem 3rem; }
+      .hero-names { font-size: 3rem; }
+      .hero-subtitle { font-size: 0.75rem; }
+      .hero-photo { width: 160px; height: 160px; }
+
+      .section-title { font-size: 2rem; }
+
+      .band-feature {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .band-feature img {
+        width: 160px;
+        margin: 0 auto;
+        transform: rotate(0);
+      }
+
+      .schedule-table { font-size: 0.75rem; }
+      .schedule-event { font-size: 0.6rem; padding: 0.25rem 0.4rem; letter-spacing: 0.02em; }
+
+      .info-grid { grid-template-columns: 1fr; }
+      .camping-grid { grid-template-columns: 1fr; }
+      .gift-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .rsvp-section .section-title { text-align: center; }
+      .rsvp-section .section-title::after { left: 50%; transform: translateX(-50%); }
+
+      :root { --section-padding: 3rem 1rem; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-names { font-size: 2.4rem; }
+      .hero-photo { width: 140px; height: 140px; }
+      .gift-grid { grid-template-columns: 1fr; }
+      .schedule-event { font-size: 0.55rem; padding: 0.2rem 0.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== Navigation ========== -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-logo">Keelin & Alex</span>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#music">Music</a></li>
+      <li><a href="#food">Food</a></li>
+      <li><a href="#camping">Camping</a></li>
+      <li><a href="#registry">Registry</a></li>
+      <li><a href="#rsvp">RSVP</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ========== Hero ========== -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <img src="images/couple-photo.png" alt="Keelin and Alex" class="hero-photo">
+    <div class="hero-names">Keelin <span class="hero-ampersand">&</span> Alex</div>
+    <div class="hero-subtitle">Wedding Campout</div>
+    <div class="hero-details">
+      <strong>July 18th & 19th, 2026</strong><br>
+      Dundee Lodge<br>
+      50845 SW Dundee Road, Gaston, OR 97119
+    </div>
+    <a href="#rsvp" class="hero-cta">RSVP</a>
+  </div>
+</section>
+
+<!-- ========== Schedule ========== -->
+<section id="schedule" class="bg-cream">
+  <div class="section-inner">
+    <h2 class="section-title teal">Weekend Timeline</h2>
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Fri 7/17</th>
+          <th>Sat 7/18</th>
+          <th>Sun 7/19</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>10:00 AM</td>
+          <td><span class="schedule-event event-setup">Set Up & Lake</span></td>
+          <td><span class="schedule-event event-brunch">Brunch</span></td>
+          <td><span class="schedule-event event-byo">BYO Breakfast</span></td>
+        </tr>
+        <tr>
+          <td>12:00 PM</td>
+          <td><span class="schedule-event event-arrive">Arrivals</span></td>
+          <td><span class="schedule-event event-arrive">Arrivals / Tents</span></td>
+          <td><span class="schedule-event event-packout">Pack It Out</span></td>
+        </tr>
+        <tr>
+          <td>5:30 PM</td>
+          <td><span class="schedule-event event-chapa">Chapa Dinner</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>6:00 PM</td>
+          <td></td>
+          <td><span class="schedule-event event-ceremony">Wedding Ceremony</span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>7:00 PM</td>
+          <td></td>
+          <td><span class="schedule-event event-dinner">Dinner + DJs</span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>8:00 PM</td>
+          <td><span class="schedule-event event-chill">Chillin</span></td>
+          <td><span class="schedule-event event-band">Orquestra Pacifico Tropical</span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>9:30 PM</td>
+          <td></td>
+          <td><span class="schedule-event event-dj">DJs</span></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ========== About ========== -->
+<section id="about" class="bg-teal">
+  <div class="section-inner">
+    <h2 class="section-title teal">About</h2>
+    <p style="max-width:700px; margin:0 0 2rem; font-size:1.05rem; line-height:1.7;">
+      We are excited to invite you to our wedding weekend at the historic Dundee Lodge! Built in 1921 for Fred and Esther Dundee and designed by E. E. Green, the lodge is a rustic log cabin listed on the National Register of Historic Places since 1985. We have planned a celebration of love and community, featuring live music in a beautiful outdoor setting.
+    </p>
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>Dress Code</h3>
+        <p>Camping wedding &mdash; dress up as fancy as you want with your cowboy and hiking boots on.</p>
+      </div>
+      <div class="info-card teal-border">
+        <h3>Kids</h3>
+        <p>Children are welcome! There is a designated play area for kids on the property.</p>
+      </div>
+      <div class="info-card green-border">
+        <h3>Parking</h3>
+        <p>On-site parking is available.</p>
+      </div>
+      <div class="info-card orange-border">
+        <h3>Directions</h3>
+        <p><a href="https://www.google.com/maps/place/50845+SW+Dundee+Rd,+Gaston,+OR+97119" target="_blank" rel="noopener">Get Directions via Google Maps</a></p>
+        <p><strong>Note:</strong> Download directions before you arrive &mdash; there is limited or no cell service near the lodge.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Where to Stay ========== -->
+<section id="stay" class="bg-cream">
+  <div class="section-inner">
+    <h2 class="section-title green">Where to Stay</h2>
+    <div class="info-grid">
+      <div class="info-card green-border">
+        <h3>Camping (Free!)</h3>
+        <p>You are welcome to camp at the venue for free! There is lots of space for camping with primitive campsites in designated areas.</p>
+        <p style="margin-top:0.5rem"><strong>RVs:</strong> There is space to park your RV on the property.</p>
+      </div>
+      <div class="info-card teal-border">
+        <h3>Hotels</h3>
+        <p>For those not camping, our parents will be staying at:</p>
+        <ul>
+          <li><strong>McMinnville Inn</strong> &mdash; $110/night<br>381 NE Highway 99 W, McMinnville, OR 97128<br><em>36 min drive from lodge</em></li>
+          <li style="margin-top:0.75rem"><strong>America's Best Value Inn Forest Grove</strong><br>3306 Pacific Ave, Forest Grove, OR 97116<br><em>20 min drive from lodge</em></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Music ========== -->
+<section id="music" class="bg-pink">
+  <div class="section-inner">
+    <h2 class="section-title pink">The Venue & Music</h2>
+    <p style="max-width:700px; margin:0 0 2rem; font-size:1rem;">
+      The property has a stage and groomed area set up for the celebration, and we will have a professional sound company running things all weekend.
+    </p>
+    <div class="band-feature">
+      <img src="images/opt-band-photo.png" alt="Orquestra Pacifico Tropical">
+      <div class="band-info">
+        <h3><a href="https://orquestrapacificotropical.com/" target="_blank" rel="noopener">Orquestra Pacifico Tropical</a></h3>
+        <p>An 11-piece Portland-based cumbia band founded in 2012, blending classic Peruvian and Colombian cumbia with salsa and psychedelic northwest-inspired sounds. They've performed at Pickathon, Treefort Music Fest, PDX Pop Now!, and the Waterfront Blues Festival.</p>
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <h3 style="font-family:var(--font-display); font-size:1.2rem; margin-bottom:1rem;">DJs</h3>
+      <div class="dj-list" style="justify-content:center;">
+        <span class="dj-tag">Cuica</span>
+        <span class="dj-tag">DJ DNA</span>
+        <span class="dj-tag">DJ Scott</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Food & Drink ========== -->
+<section id="food" class="bg-orange">
+  <div class="section-inner">
+    <h2 class="section-title orange">Food & Drink</h2>
+
+    <!-- Chapa -->
+    <div class="food-event">
+      <h3>The Chapa Evening</h3>
+      <div class="food-subtitle">Friday &mdash; the night before the wedding</div>
+      <p>We're kicking things off the night before our wedding with a big, fire-filled dinner&mdash;and you're invited. We'll be gathered around the chapa, cooking and serving food as it comes off the fire. Think slow, relaxed, a little messy in the best way&mdash;plates in hand, conversations flowing, and plenty of time to just be together.</p>
+      <ul class="menu-list">
+        <li>Griddled pears with prosciutto, warm bread, cheeses, and chimichurri</li>
+        <li>Beet and arugula salad with goat cheese</li>
+        <li>Stone fruit salad</li>
+        <li>Seared skirt steak and Moroccan-spiced chicken</li>
+        <li>Smashed potatoes, roasted baby peppers, and broccolini</li>
+      </ul>
+      <div class="food-note">
+        BYO Cocktails, Beverages, plates, cups, and cutlery. There is a large wash-out sink in the basement of the lodge. Meet us by the firelight. Come hungry, stay awhile.
+      </div>
+    </div>
+
+    <!-- Breakfast -->
+    <div class="food-event breakfast-border">
+      <h3>Love Bird Breakfast</h3>
+      <div class="food-subtitle">Saturday morning &mdash; the morning of the wedding</div>
+      <p>Come back the next morning for a cozy, easy breakfast before the big day.</p>
+      <ul class="menu-list">
+        <li>Griddled buttermilk pancakes with berries and whipped cream</li>
+        <li>Scrambled eggs</li>
+        <li>Breakfast sausage</li>
+        <li>Crispy potatoes</li>
+      </ul>
+      <p>Come as you are&mdash;coffee in hand, a little sleepy, ready to ease into the day with us. Coffee and tea will be available in the basement of the lodge.</p>
+    </div>
+
+    <!-- Saturday Dinner -->
+    <div class="food-event dinner-border">
+      <h3>Saturday Evening Dinner &mdash; on us!</h3>
+      <div class="food-subtitle">Saturday evening &mdash; after the ceremony</div>
+      <p>Dinner is on us! We will be serving:</p>
+      <ul class="menu-list">
+        <li>Roasted tacos: chorizo, pork, or chicken</li>
+        <li>Shepherd quesadillas (same meats)</li>
+        <li>Red sauce, green cilantro, onion, chilies toreados, lemons, radishes</li>
+        <li>3 fresh aguas frescas (flavor of your choice)</li>
+        <li>Rice and beans</li>
+        <li>Vegetarian options: potato flautas, zucchini, mushrooms, tofu</li>
+        <li>Red tamales, green chicken or pork tamales</li>
+      </ul>
+      <p><strong>Unlimited servings for everyone!</strong></p>
+      <div class="food-note">
+        <strong>Saturday Drinks (provided):</strong> Beer, wine, 2 pre-fixed cocktails, and 1 non-alcoholic cocktail.
+      </div>
+    </div>
+
+    <!-- Sunday -->
+    <div class="food-event sunday-border">
+      <h3>Sunday &mdash; BYO Breakfast & Pack Up</h3>
+      <div class="food-subtitle">Sunday morning</div>
+      <p>Sunday morning is on your own &mdash; bring your own breakfast and coffee, or grab something in Gaston (10 minutes away). Please pack up and head out by noon.</p>
+    </div>
+
+    <!-- Water -->
+    <div class="alert-box">
+      <h3>Bring Water!</h3>
+      <p>There will be limited potable water available. Please plan ahead and bring enough water to last your group for the whole weekend.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Camping & Info ========== -->
+<section id="camping" class="bg-green">
+  <div class="section-inner">
+    <h2 class="section-title green">Camping & Info</h2>
+
+    <!-- What to Bring -->
+    <div class="camping-card" style="margin-bottom:2rem;">
+      <h3>What to Bring</h3>
+      <ul>
+        <li>Camping gear, blankets, lawn chairs</li>
+        <li>Plates, cups, cutlery</li>
+        <li>Swimsuit and floatie</li>
+        <li>Plenty of water</li>
+      </ul>
+    </div>
+
+    <div class="camping-grid">
+      <!-- Henry Hagg Lake -->
+      <div class="camping-card">
+        <h3>Henry Hagg Lake</h3>
+        <p>Bring a swimsuit and floatie! Walk through the forest road on the back of the property&mdash;about 15 minutes or less from the lodge down to the public beach on Henry Hagg Lake. You can also drive to the lake, about 15 minutes from the lodge.</p>
+      </div>
+
+      <!-- Camping Info -->
+      <div class="camping-card">
+        <h3>Camping Info</h3>
+        <p>We want everyone to stay and celebrate with us! There is lots of space for camping with primitive campsites available for all guests in designated areas.</p>
+        <ul>
+          <li><strong>RVs:</strong> Space to park your RV on the property</li>
+          <li><strong>Weather:</strong> Be prepared for anything &mdash; cold nights, hot days, possible rain</li>
+          <li><strong>Facilities:</strong> Port-o-potties on-site</li>
+          <li><strong>Cooking:</strong> Propane burners and cooktops allowed at your campsite</li>
+          <li><strong>Kids Play Area:</strong> Designated play area on the property</li>
+        </ul>
+      </div>
+
+      <!-- Health & Safety -->
+      <div class="camping-card">
+        <h3>Health & Safety</h3>
+        <ul>
+          <li>Limited or no phone reception</li>
+          <li><strong>Nearby Services:</strong> Gaston is 10 min away &mdash; cell service, WiFi, ATM, gas, pub, brewery, mini-mart, diner</li>
+          <li><strong>Poison Oak:</strong> Be mindful and stick to cleared pathways!</li>
+        </ul>
+      </div>
+
+      <!-- Trash -->
+      <div class="camping-card">
+        <h3>Trash & Recycling</h3>
+        <p><strong>"Pack It In, Pack It Out"</strong> &mdash; There is no trash or recycling service on-site. Whatever you bring, please take back out on Sunday. Anything left behind, we have to haul out ourselves!</p>
+      </div>
+
+      <!-- Property Rules -->
+      <div class="camping-card">
+        <h3>Property Rules</h3>
+        <ul>
+          <li><strong>Neighbors:</strong> The owners live on-site &mdash; please be mindful and courteous of their space</li>
+          <li><strong>No Dogs/Pets:</strong> No dogs or pets of any kind are allowed on the property</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Fire Safety Alert -->
+    <div class="alert-box" style="margin-top:2rem;">
+      <h3>Fire Safety</h3>
+      <p><strong>Absolutely NO campfires or cigarette smoking outside the designated fire-pit area.</strong></p>
+      <p style="margin-top:0.5rem;">It gets extremely dry in the area. Smokers: please pocket your butts or use provided receptacles. DO NOT throw butts on the ground. All smoking must be contained within the stone fire pit area.</p>
+    </div>
+
+    <!-- Venue Map -->
+    <div class="venue-map-container">
+      <h3 style="font-family:var(--font-display); font-size:1.4rem; margin-bottom:1rem;">Venue Map</h3>
+      <img src="images/venue-map.png" alt="Dundee Lodge Venue Map">
+      <p style="font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; margin-top:2rem; margin-bottom:0.75rem;">The Entrance</p>
+      <img src="images/car-photo.png" alt="Lodge Entrance" class="entrance-photo">
+    </div>
+  </div>
+</section>
+
+<!-- ========== Registry ========== -->
+<section id="registry" class="bg-yellow">
+  <div class="section-inner">
+    <h2 class="section-title yellow">Registry</h2>
+    <div class="registry-intro">
+      <p>Your presence is the greatest gift. Truly, we mean it. We know many of you are traveling and camping out to be with us, and your company is the only thing we really need.</p>
+      <p style="margin-top:1rem;">However, we know some of you are stubborn and will want to give a gift anyway! Since we have been living together for a while, we already have plenty of toasters, towels, and mismatched Tupperware.</p>
+      <p style="margin-top:1rem;">Instead of traditional gifts, we have set up a <strong>Honeymoon Fund</strong>. If you'd like to contribute, we've created a "menu" below so you can see exactly what your gift will help us enjoy!</p>
+      <div><span class="venmo-tag">Venmo: @alexkroman (last 4: 7291)</span></div>
+    </div>
+    <div class="gift-grid">
+      <div class="gift-card">
+        <div class="gift-amount">$20</div>
+        <h4>"Morning Recovery" Fund</h4>
+        <p>Coffee and fresh pastries the morning after the wedding (or on our honeymoon!)</p>
+      </div>
+      <div class="gift-card">
+        <div class="gift-amount">$50</div>
+        <h4>Road Trip Fuel</h4>
+        <p>Fills the tank for a leg of our honeymoon road trip</p>
+      </div>
+      <div class="gift-card">
+        <div class="gift-amount">$100</div>
+        <h4>Dinner</h4>
+        <p>Treats us to a meal as newlyweds</p>
+      </div>
+      <div class="gift-card">
+        <div class="gift-amount">$300</div>
+        <h4>Couples Massage</h4>
+        <p>Treats us to a couples massage</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== RSVP ========== -->
+<section id="rsvp" class="rsvp-section">
+  <div class="section-inner">
+    <h2 class="section-title">RSVP</h2>
+    <p style="margin-bottom:2rem; font-size:1.1rem;">We can't wait to celebrate with you!</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScGhIMc_6vwgSsH9uQCji1vC4PjVvPqQ2w2HmdvWQ4C1L7y6Q/viewform" target="_blank" rel="noopener" class="rsvp-btn">RSVP Here</a>
+  </div>
+</section>
+
+<!-- ========== Footer ========== -->
+<footer>
+  <div class="footer-names">Keelin & Alex</div>
+  <p>July 18 &ndash; 19, 2026 &middot; Dundee Lodge &middot; Gaston, Oregon</p>
+</footer>
+
+<!-- ========== JavaScript ========== -->
+<script>
+  // Mobile hamburger menu
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+
+  // Close menu when a link is clicked
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+    });
+  });
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navItems = document.querySelectorAll('.nav-links a');
+
+  function updateActiveNav() {
+    const scrollY = window.scrollY + 100;
+
+    sections.forEach(section => {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+      const id = section.getAttribute('id');
+
+      if (scrollY >= top && scrollY < top + height) {
+        navItems.forEach(item => {
+          item.classList.remove('active');
+          if (item.getAttribute('href') === '#' + id) {
+            item.classList.add('active');
+          }
+        });
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveNav);
+  updateActiveNav();
+</script>
+
+</body>
+</html>
